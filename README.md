@@ -1,43 +1,50 @@
-# Breeze
+# KDE-adwaita
 
-Breeze is the default style for [Plasma](https://kde.org/plasma-desktop/). This repository contains some parts of Breeze such as the cursors, wallpapers, and the application style.
+Consistency is key. If we can't theme Adwaita apps to look like KDE, we can theme KDE to look like Adwaita.
+
+KDE-adwaita is a fork of [Breeze](https://github.com/KDE/breeze), the default style for Plasma. This project aims to bring the visual language of Libadwaita and GNOME's aesthetic to the KDE Plasma desktop, ensuring a seamless experience when running GTK and Qt applications side-by-side.
 
 ## Components
 
-This repository contains many parts of Breeze, such as:
+This repository contains modified parts of the Breeze style to achieve the Adwaita look:
 
-* Color schemes, located under [/colors](/colors).
+* Color schemes, located under [/colors](/colors): Palettes inspired by the GNOME "Light" and "Dark" variants.
 * Cursors, located under [/cursors](/cursors).
-* Window decorations, located under [/kdecoration](/kdecoration).
-* Application style, located under [/kstyle](/kstyle).
-* Wallpapers, located under [/wallpapers](/wallpapers).
+* Window decorations, located under [/kdecoration](/kdecoration). Updated button geometry and title bar heights to match Libadwaita.
+* Application style, located under [/kstyle](/kstyle). Redesigned widgets (buttons, sliders, tabs) for a consistent GTK-like feel.
 
-### See Also
-
-If you can't find what you're looking for, it may exist in another repository instead:
-
-* [Breeze Icons](https://invent.kde.org/frameworks/breeze-icons) contains the icon set used in Plasma.
-* [libplasma](https://invent.kde.org/plasma/libplasma/-/tree/master/src/desktoptheme) includes the [Plasma Style](https://develop.kde.org/docs/plasma/theme/) that affects the visuals for the Plasma panel and widgets.
-* The [Breeze SDDM theme](https://invent.kde.org/plasma/plasma-desktop/-/tree/master/sddm-theme) lives within the Plasma Desktop repository, adjacent to the lock screen.
-* [Plasma Workspace Wallpapers](https://invent.kde.org/plasma/plasma-workspace-wallpapers) contains the rest of the default wallpapers shipped with Plasma.
-* [Breeze for GTK](https://invent.kde.org/plasma/breeze-gtk) is the Breeze [GTK](https://gtk.org/) theme.
-* [QQC2 Desktop Style](https://invent.kde.org/frameworks/qqc2-desktop-style) is the default [Qt Quick Controls](https://doc.qt.io/qt-6/qtquickcontrols-index.html) style for desktop KDE applications. It draws controls in QtQuick-based apps using the current application style. If you're using KDE apps on Plasma or another Linux desktop, you're most likely using it.
-* [Breeze Style for QQC2](https://invent.kde.org/plasma/qqc2-breeze-style) is a Qt Quick Controls style that mimics the visual styling of Breeze specifically. If you're using KDE apps on Android or Plasma Mobile, you're most likely using it.
+### Credits & Upstream
+This project is based on the excellent work by the KDE Community. If you are looking for the original, unmodified experience, please visit:
+* [Official Breeze Repository](https://invent.kde.org/plasma/breeze)
+* [Breeze Icons](https://invent.kde.org/frameworks/breeze-icons)
+* [Breeze for GTK](https://invent.kde.org/plasma/breeze-gtk)
 
 ## Building
 
-The easiest way to make changes and test Breeze during development is to [build it with kdesrc-build](https://community.kde.org/Get_Involved/development/Build_software_with_kdesrc-build).
+To build KDE-adwaita manually, ensure you have the necessary KDE Frameworks development headers installed.
 
-When building Breeze manually, keep in mind that the Qt5 and Qt6 versions will be built by default. To control which versions are built, use the `BUILD_QT5` and `BUILD_QT6` CMake variables.
+´´´bash
+mkdir build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_QT5=OFF -DBUILD_QT6=ON
+make
+sudo make install
+´´´
+
+Note: By default, this fork focuses on Qt6 to align with the latest Plasma releases.
 
 ## Contributing
 
-Like other projects in the KDE ecosystem, contributions are welcome from all. This repository is managed in [KDE Invent](https://invent.kde.org/plasma/breeze), our GitLab instance.
+Contributions are welcome! Since this is a fork focused on visual consistency with Adwaita:
 
-* Want to contribute code? See the [GitLab wiki page](https://community.kde.org/Infrastructure/GitLab) for a tutorial on how to send a merge request.
-* Reporting a bug? Please submit it on the [KDE Bugtracking System](https://bugs.kde.org/enter_bug.cgi?format=guided&product=breeze). Please do not use the Issues
-tab to report bugs.
-* Is there a part of Breeze that's not translated? See the [Getting Involved in Translation wiki page](https://community.kde.org/Get_Involved/translation) to see how
-you can help translate!
+* **Bug Reports:** If you find a widget that doesn't look quite right or breaks the Adwaita aesthetic, please open an Issue in this repository.
 
-If you get stuck or need help with anything at all, head over to the [KDE New Contributors room](https://go.kde.org/matrix/#/#kde-welcome:kde.org) on Matrix. For questions about Breeze, please ask in the [KDE Development room](https://go.kde.org/matrix/#/#kde-devel:kde.org). See [Matrix](https://community.kde.org/Matrix) for more details.
+* **Pull Requests:** If you want to contribute code or style fixes, feel free to fork this repo and submit a Pull Request.
+
+* **Design Suggestions:** Ideas on how to improve the "Libadwaitización" of Plasma are always appreciated in the Discussions or Issues tab.
+
+## Maintainer
+David (sabaneko-run)
+
+GitHub: [sabaneko-run](https://github.com/sabaneko-run)
+
+Contact: [sabaneko.run@gmail.com](mailto:sabaneko.run@gmail.com)
